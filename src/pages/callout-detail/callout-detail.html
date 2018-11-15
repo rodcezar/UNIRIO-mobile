@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{section.titleValue}}</ion-title>
+    </ion-navbar>
+</ion-header>
+  
+
+<ion-content padding="true">
+    <div text-justify>
+    <!--<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {{section.textValue}} -->
+        <div [innerHtml]="section.textValue" ></div>
+    </div>
+</ion-content>
+  
+  

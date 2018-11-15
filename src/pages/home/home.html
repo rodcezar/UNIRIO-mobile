@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles">
+        </ion-refresher-content>
+     </ion-refresher>
+  <br><br>
+  <img src="assets/imgs/unirio_small.png"/>
+  <h3>Agenda do aluno</h3>
+  <br>
+    <ion-content padding>
+        <div *ngFor="let section of sectionList" (click)="itemTapped($event, section)">
+          <ion-list>
+              <button ion-button full> 
+                {{section.title}}
+              </button>
+          </ion-list>
+        </div>
+    </ion-content>
+</ion-content>

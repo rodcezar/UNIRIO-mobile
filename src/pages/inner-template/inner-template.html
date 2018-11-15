@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{section.title}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content padding="true">
+        <div *ngFor="let section of sectionList">
+          <div *ngIf="!section.isHTML">
+            <ion-list>
+                <button ion-button full (click)="itemTapped($event, section)">    
+                  {{section.titleValue}}
+                </button>
+                <div *ngIf="section.showText">
+                  {{section.textValue}}
+                </div>
+            </ion-list>
+          </div>
+          <div *ngIf="section.isHTML">
+            <div [innerHtml]="section.textValue" ></div>
+          </div>
+        </div>
+        <br>
+        {{debugString}}
+</ion-content>
+ 
